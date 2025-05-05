@@ -13,6 +13,11 @@ res.send([
     {id:3,username:"avi",displayName:"ap23"}
 ])
 })
+app.get("api/users/:id",(req,res)=>{
+    const user={id:req.params.id,username:"avi",displayName:"ap23"}
+    res.send(user);
+})  
+
 app.listen(port,()=>{
     console.log(`listening on port ${port}` )
 });
