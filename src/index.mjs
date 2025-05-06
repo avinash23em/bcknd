@@ -13,7 +13,10 @@ res.send([
     {id:3,username:"avi",displayName:"ap23"}
 ])
 })
-app.get("api/users/:id",(req,res)=>{
+app.get("/api/users/:id",(req,res)=>{
+    console.log(req.params);
+})
+app.get("api/users/product",(req,res)=>{
     const user={id:req.params.id,username:"avi",displayName:"ap23"}
     res.send(user);
 })  
