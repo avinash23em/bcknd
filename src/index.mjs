@@ -7,11 +7,13 @@ res.send("hellow world");
 });
 const mock=[ 
     {id:1,username:"avi",displayName:"ap23"},
-    {id:2,username:"avi",displayName:"ap23"},
-    {id:3,username:"avi",displayName:"ap23"}
+    {id:2,username:"bvi",displayName:"xp23"},
+    {id:3,username:"cvi",displayName:"fp23"},
+    {id:4,username:"dvi",displayName:"yp23"}
 ]
 
 app.get("/api/users",(req,res)=>{
+    console.log(req.query);
 res.send(mock);
 })
 
@@ -24,8 +26,6 @@ app.get("/api/users/:id",(req,res)=>{
     const finduser=mock.find((user)=>user.id==parseId);
     if(!finduser) res.send(404);
     return res.send(finduser);
-    
-
 })
 app.get("api/users/product",(req,res)=>{
     const user={id:req.params.id,username:"avi",displayName:"ap23"}
