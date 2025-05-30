@@ -14,7 +14,13 @@ const mock=[
 
 app.get("/api/users",(req,res)=>{
     console.log(req.query);
-res.send(mock);
+    const {query :{filter,value},}=req;
+    if(!filter && !value) res.send(mock);
+    if(filter && value){
+        return res.send(
+            mock.filter((user)=>user[filter].includes(value))
+        );
+    }
 })
 
 app.get("/api/users/:id",(req,res)=>{
