@@ -18,7 +18,7 @@ app.get("/api/users",(req,res)=>{
     if(!filter && !value) res.send(mock);
     if(filter && value){
         return res.send(
-            mock.filter((user)=>user[filter].includes(value))
+            mock.filter((user)=>[filter].includes(value))
         );
     }
 })
