@@ -5,6 +5,10 @@ const port=process.env.port || 3000;
 app.get("/",(req,res)=>{
 res.send("hellow world");
 });
+const logmiddle=(req,res,next)=>{
+    console.log(`${req.method}-${req.url}`);
+    next();
+};
 const mock=[ 
     {id:1,username:"avi",displayName:"ap23"},
     {id:2,username:"bvi",displayName:"xp23"},
